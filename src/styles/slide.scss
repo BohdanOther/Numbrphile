@@ -1,0 +1,118 @@
+@import './partials/layout';
+.btn-hamburger {
+    color: white;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    position: absolute;
+    left: .5em;
+    font-size: 2em;
+    margin-top: .45em;
+    transition: all .2s;
+}
+
+.slideout-open .btn-hamburger {
+    transform: rotate(-90deg);
+}
+
+.panel {
+    height: 100%;
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, 0.77);
+    background-color: #e9f0f5;
+}
+
+.menu {
+    background-color: #1D1F20;
+    font: 100%/1.4em 'Calibre Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    a {
+        color: #fff;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &-header {
+        border-bottom: 1px solid #2a2d2f;
+        padding: 20px;
+        background-size: 32px;
+        &-title {
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+    }
+    &-section {
+        margin: 25px 0;
+        &-title {
+            text-transform: uppercase;
+            color: #85888d;
+            font-weight: 200;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 0 20px;
+            margin: 0;
+        }
+        &-list {
+            padding: 0;
+            margin: 10px 0;
+            list-style: none;
+            a {
+                display: block;
+                padding: 10px 20px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            li:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+
+.slideout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 240px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+}
+
+.slideout-panel {
+    position: relative;
+    z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+    display: block;
+}
+
+@include MQ(L) {
+    /* don't use slide out panel on wide screens */
+    .slideout-panel {
+        margin-left: 240px;
+    }
+    .slideout-menu {
+        display: block;
+    }
+    .btn-hamburger {
+        display: none;
+    }
+    .panel {
+        overflow-x: hidden;
+    }
+}

@@ -1,0 +1,81 @@
+@import 'sass-autoprefixer/scss/prefixes.scss';
+@include vp-keyframes(cd-bounce-1) {
+    0% {
+        opacity: 0;
+        @include vp-transform( scale(0.5) rotate(-90deg) translateX(-80%));
+    }
+    60% {
+        opacity: 1;
+        @include vp-transform(scale(1.2) rotate(-90deg) translateX(-80%));
+    }
+    100% {
+        @include vp-transform(scale(1) rotate(-90deg) translateX(-80%));
+    }
+}
+
+@include vp-keyframes(cd-bounce-left-1) {
+    0% {
+        opacity: 0;
+        @include vp-transform( scale(0.5) translateX(-100%));
+    }
+    60% {
+        opacity: 1;
+        @include vp-transform( scale(1.2) translateX(-100%));
+    }
+    100% {
+        @include vp-transform( scale(1) translateX(-100%));
+    }
+}
+
+@include vp-keyframes(cd-bounce-right-1) {
+    0% {
+        opacity: 0;
+        @include vp-transform( scale(0.5));
+    }
+    60% {
+        opacity: 1;
+        @include vp-transform( scale(1.2));
+    }
+    100% {
+        @include vp-transform( scale(1));
+    }
+}
+
+@include vp-keyframes(cd-bounce-2) {
+    0% {
+        opacity: 0;
+        @include vp-transform(translateX(-100px));
+    }
+    60% {
+        opacity: 1;
+        @include vp-transform( translateX(20px));
+    }
+    100% {
+        @include vp-transform( translateX(0));
+    }
+}
+
+@include vp-keyframes( cd-bounce-2-inverse) {
+    0% {
+        opacity: 0;
+        @include vp-transform(translateX(100px));
+    }
+    60% {
+        opacity: 1;
+        @include vp-transform(translateX(-20px));
+    }
+    100% {
+        @include vp-transform(translateX(0));
+    }
+}
+
+@include vp-keyframes ( stretch-rect) {
+    0%,
+    40%,
+    100% {
+        @include vp-transform(scaleY(0.4));
+    }
+    20% {
+        @include vp-transform( scaleY(1.0));
+    }
+}
